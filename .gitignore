@@ -2,6 +2,8 @@
 .DS_Store
 *.pem
 
+dist/**/*
+
 .virtualenvs
 ## 3rdparty:
 *.png

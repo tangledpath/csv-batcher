@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A utility to split a large CSV into smaller ones, and uses multiprocessing to process the CSVs in parallel."
 authors = ["Steven Miers <steven.miers@gmail.com>"]
 readme = "README.md"
-
+license = "The Unlicense"
 [tool.poetry.dependencies]
 python = "^3.12"
 pandas = "^2.2.0"

@@ -1,9 +1,9 @@
 from multiprocessing import Pool
 from typing import Callable
-
+from csv_batcher.utils.logger import logging
 import pandas as pd
 
-from csv_splitter import CSVSplitter
+from csv_batcher.csv_splitter import CSVSplitter
 
 
 class Pooler:
@@ -31,54 +31,34 @@ class Pooler:
         """
         self.csv_filename = csv_filename
         self.process_fn = process_fn
+        self.as_dataframe = as_dataframe
         self.pool_size = pool_size
         self.chunk_size = chunk_size
-        self.processed_count = 0
-
-        print("process_fn", process_fn)
 
     def process(self):
-        self.processed_count = 0
+        processed_count = 0
         csv_splitter = CSVSplitter(self.csv_filename, self.chunk_size)
         try:
-            print(f"Pooling against {len(csv_splitter.csv_files())} files")
+            csv_file_cnt = len(csv_splitter.csv_files())
+            logging.info(f"Pooling against {csv_file_cnt} files")
             with Pool(5) as p:
                 for result in p.imap(self._process_csv, csv_splitter.csv_files()):
-                    pass
-                    # print(result)
+                    processed_count += result
         finally:
             csv_splitter.cleanup()
 
+        logging.info(
+            f"Processed {processed_count} rows from {csv_file_cnt} CSV Files"
+        )
+
     def _process_csv(self, csv_chunk_filename):
-        if (as_dataframe):
+        if self.as_dataframe:
             df = pd.read_csv(csv_chunk_filename, skipinitialspace=True, index_col=None)
+            result = df.shape[0]
             self.process_fn(df)
         else:
             self.process_fn(csv_chunk_filename)
-
-
-
-# def test_apply(row):
-#     return row.iloc[0]
-
-# def process(chunk):
-#     # print("processing")
-#     df = pd.read_csv(chunk, skipinitialspace=True, index_col=None)
-#     foo = df.apply(test_apply, axis=1)
-#     return len(df)
-
-# @time_and_log("test_batching")
-# def test_csv_batching():
-#     csv_splitter = CSVSplitter("5mSalesRecords.csv", 100000)
-#     try:
-#         print(f"Pooling against {len(csv_splitter.csv_files())} files")
-#         with Pool(5) as p:
-#             for result in p.imap(process, csv_splitter.csv_files()):
-#                 print(result)
-
-#     finally:
-#         csv_splitter.cleanup()
-
-
-# if __name__ == "__main__":
-#     test_csv_batching()
+            with open(csv_chunk_filename) as f:
+                # Get total lines and subtract for header:
+                result = sum(1 for line in f) - 1
+        return result

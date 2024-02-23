@@ -1,4 +1,5 @@
 import tempfile
+from csv_batcher.utils.logger import logging
 
 class CSVSplitter:
     def __init__(self, csv_filename, chunk_size= 10000):
@@ -24,6 +25,7 @@ class CSVSplitter:
             # write remainder
             if len(lines) > 0:
                 self.write_chunk((count // self.chunk_size) + 1, lines)
+        logging.info(f"Split ({self.csv_filename}) into {len(self.chunk_files)}")
 
     def write_chunk(self, header, part, lines):
         chunk_filename = f"{self.chunk_dir.name}/data_part_{str(part)}.csv"
