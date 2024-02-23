@@ -1,41 +1,37 @@
 import unittest
 from csv_batcher.utils.time import time_and_log
-from csv_batcher.pooler import Pooler
+from csv_batcher.pooler import Pooler, CallbackWith
 import pandas as pd
 
-
-def df_apply(row):
+def __process_dataframe_row(row):
     return row.iloc[0]
 
-
-# @time_and_log("test_big_file")
-def process_to_dataframe(csv_chunk_filename):
+def __process_csv_filename(csv_chunk_filename):
     # print("processing ", csv_chunk_filename)
     df = pd.read_csv(csv_chunk_filename, skipinitialspace=True, index_col=None)
-    foo = df.apply(df_apply, axis=1)
-    return len(df)
+    return df.apply(__process_dataframe_row, axis=1)
 
+def __process_as_dataframe(df):
+    return df.apply(__process_dataframe_row, axis=1)
 
-def process_as_dataframe(df):
-    foo = df.apply(df_apply, axis=1)
-    return len(df)
+def test_big_file_as_csv():
+    with time_and_log("test_big_file_as_csv"):
+        pooler = Pooler("5mSalesRecords.csv", __process_csv_filename)
+        pooler.process()
 
+def test_big_file_as_dataframe():
+    with time_and_log("test_big_file_as_dataframe"):
+        pooler = Pooler("5mSalesRecords.csv", __process_as_dataframe, callback_with=CallbackWith.DATAFRAME)
+        pooler.process()
 
-class TestPooler(unittest.TestCase):
-    def test_big_file(self):
-        with time_and_log("test_big_file"):
-            pooler = Pooler("5mSalesRecords.csv", process_to_dataframe)
-            pooler.process()
+def test_big_file_as_dataframe_rows():
+    with time_and_log("test_big_file_as_dataframe_rows"):
+        pooler = Pooler("5mSalesRecords.csv", __process_dataframe_row, callback_with=CallbackWith.DATAFRAME_ROW, pool_size=16)
+        pooler.process()
 
-    def test_big_file_as_dataframe(self):
-        with time_and_log("test_big_file_pool_chunk"):
-            pooler = Pooler("5mSalesRecords.csv", process_as_dataframe, as_dataframe=True, pool_size=16)
-            pooler.process()
-
-    # @unittest.skip("takes long")
-    def test_no_pooler(self):
-        with time_and_log("test_no_pooler"):
-            process_to_dataframe("5mSalesRecords.csv")
+def test_no_pooler():
+    with time_and_log("test_no_pooler"):
+        __process_csv_filename("5mSalesRecords.csv")
 
 
 if __name__ == "__main__":
