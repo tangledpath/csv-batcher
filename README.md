@@ -73,12 +73,20 @@ values:
     pool_size=16
   )
   pooler.process()
-
+```
 ## Development
 ### Linting
 ```bash
    ruff check . # Find linting errors
    ruff check . --fix # Auto-fix linting errors (where possible)
+```
+
+### Documentation
+```
+  # Shows in browser
+  poetry run pdoc csv_batcher
+  # Generates to ./docs
+  poetry run pdoc csv_batcher -o ./docs
 ```
 
 ### Testing

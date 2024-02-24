@@ -1,6 +1,6 @@
 import unittest
 from csv_batcher.utils.time import time_and_log
-from csv_batcher.pooler import Pooler, CallbackWith
+from csv_batcher.csv_pooler import Pooler, CallbackWith
 import pandas as pd
 
 def __process_dataframe_row(row):
@@ -26,7 +26,7 @@ def test_big_file_as_dataframe():
 
 def test_big_file_as_dataframe_rows():
     with time_and_log("test_big_file_as_dataframe_rows"):
-        pooler = Pooler("5mSalesRecords.csv", __process_dataframe_row, callback_with=CallbackWith.DATAFRAME_ROW, pool_size=16)
+        pooler = Pooler("5mSalesRecords.csv", __process_dataframe_row, callback_with=CallbackWith.DATAFRAME_ROW)
         pooler.process()
 
 def test_no_pooler():

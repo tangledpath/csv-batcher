@@ -27,7 +27,7 @@ class Pooler:
         csv_filename: str,
         process_fn: Callable,
         callback_with: CallbackWith = CallbackWith.CSV_FILENAME,
-        pool_size: int = 8,
+        pool_size: int = 12,
         chunk_lines: int = 10000,
     ):
         """
