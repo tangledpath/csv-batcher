@@ -35,7 +35,7 @@ class CSVSplitter:
 
             # write remainder
             if len(lines) > 0:
-                self._write_chunk((count // self.chunk_line_cnt) + 1, lines)
+                self._write_chunk(header, (count // self.chunk_line_cnt) + 1, lines)
         logging.info(f"Split ({self.csv_filename}) into {len(self.chunk_files)}")
 
     def _write_chunk(self, header:str, part:int, lines:Sequence):
