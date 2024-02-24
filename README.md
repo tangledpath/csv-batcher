@@ -4,6 +4,9 @@
 TBD (python package)
 pip install csv-batcher
 
+## Documentation
+https://tangledpath.github.io/csv-batcher/csv_batcher.html
+
 ## Usage
 Arguments sent to callback function can be controlled by
 creating pooler with `callback_with` and the CallbackWith enum
