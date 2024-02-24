@@ -46,28 +46,28 @@
 
             </li>
             <li>
-                    <a class="class" href="#Pooler">Pooler</a>
+                    <a class="class" href="#CSVPooler">CSVPooler</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#Pooler.__init__">Pooler</a>
+                                <a class="function" href="#CSVPooler.__init__">CSVPooler</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Pooler.csv_filename">csv_filename</a>
+                                <a class="variable" href="#CSVPooler.csv_filename">csv_filename</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Pooler.process_fn">process_fn</a>
+                                <a class="variable" href="#CSVPooler.process_fn">process_fn</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Pooler.callback_with">callback_with</a>
+                                <a class="variable" href="#CSVPooler.callback_with">callback_with</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Pooler.pool_size">pool_size</a>
+                                <a class="variable" href="#CSVPooler.pool_size">pool_size</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Pooler.chunk_lines">chunk_lines</a>
+                                <a class="variable" href="#CSVPooler.chunk_lines">chunk_lines</a>
                         </li>
                         <li>
-                                <a class="function" href="#Pooler.process">process</a>
+                                <a class="function" href="#CSVPooler.process">process</a>
                         </li>
                 </ul>
 
@@ -116,13 +116,13 @@
 </span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="c1">#   function. This causes the callback function to be called with</span>
 </span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="c1">#   each row as a `pd.Series` object:</span>
 </span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="n">DATAFRAME_ROW</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="k">class</span> <span class="nc">Pooler</span><span class="p">:</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="k">class</span> <span class="nc">CSVPooler</span><span class="p">:</span>
 </span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 </span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>        <span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>        <span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
 </span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>        <span class="n">callback_with</span><span class="p">:</span> <span class="n">CallbackWith</span> <span class="o">=</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">,</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
 </span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>        <span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
 </span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>    <span class="p">):</span>
 </span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -317,134 +317,134 @@
                                 </dl>
                             </div>
                 </section>
-                <section id="Pooler">
-                            <input id="Pooler-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                <section id="CSVPooler">
+                            <input id="CSVPooler-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">Pooler</span>:
+    <span class="name">CSVPooler</span>:
 
-                <label class="view-source-button" for="Pooler-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="CSVPooler-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#Pooler"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Pooler-25"><a href="#Pooler-25"><span class="linenos">25</span></a><span class="k">class</span> <span class="nc">Pooler</span><span class="p">:</span>
-</span><span id="Pooler-26"><a href="#Pooler-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-</span><span id="Pooler-27"><a href="#Pooler-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Pooler-28"><a href="#Pooler-28"><span class="linenos">28</span></a>        <span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="Pooler-29"><a href="#Pooler-29"><span class="linenos">29</span></a>        <span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
-</span><span id="Pooler-30"><a href="#Pooler-30"><span class="linenos">30</span></a>        <span class="n">callback_with</span><span class="p">:</span> <span class="n">CallbackWith</span> <span class="o">=</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">,</span>
-</span><span id="Pooler-31"><a href="#Pooler-31"><span class="linenos">31</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
-</span><span id="Pooler-32"><a href="#Pooler-32"><span class="linenos">32</span></a>        <span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
-</span><span id="Pooler-33"><a href="#Pooler-33"><span class="linenos">33</span></a>    <span class="p">):</span>
-</span><span id="Pooler-34"><a href="#Pooler-34"><span class="linenos">34</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Pooler-35"><a href="#Pooler-35"><span class="linenos">35</span></a><span class="sd">        Construct `Pooler` with given `csv_filename`, `process_fn`, `as_dataframe`, `pool_size&#39;, &#39;chunk_size&#39;</span>
-</span><span id="Pooler-36"><a href="#Pooler-36"><span class="linenos">36</span></a>
-</span><span id="Pooler-37"><a href="#Pooler-37"><span class="linenos">37</span></a><span class="sd">        Args:</span>
-</span><span id="Pooler-38"><a href="#Pooler-38"><span class="linenos">38</span></a><span class="sd">            csv_filename (str): Name of CSV file</span>
-</span><span id="Pooler-39"><a href="#Pooler-39"><span class="linenos">39</span></a><span class="sd">            process_fn (Callable): A function that accepts a single argument</span>
-</span><span id="Pooler-40"><a href="#Pooler-40"><span class="linenos">40</span></a><span class="sd">                By default, this is the path to a chunked CSV file</span>
-</span><span id="Pooler-41"><a href="#Pooler-41"><span class="linenos">41</span></a><span class="sd">                If `as_dataframe` is True, then the argument sent is a dataframe of the chunked CSV</span>
-</span><span id="Pooler-42"><a href="#Pooler-42"><span class="linenos">42</span></a><span class="sd">            callback_with (CallbackWith): Controls what is sent to callback function.</span>
-</span><span id="Pooler-43"><a href="#Pooler-43"><span class="linenos">43</span></a><span class="sd">                @see CallbackWith enumeration for details</span>
-</span><span id="Pooler-44"><a href="#Pooler-44"><span class="linenos">44</span></a><span class="sd">                Defaults to CallbackWith.CSV_FILENAME.</span>
-</span><span id="Pooler-45"><a href="#Pooler-45"><span class="linenos">45</span></a><span class="sd">            as_dataframe_rows (bool): When True, a dataframe is created as with as_dataframe.</span>
-</span><span id="Pooler-46"><a href="#Pooler-46"><span class="linenos">46</span></a><span class="sd">                that is sent to `process_fn` instead.  Defaults to False.</span>
-</span><span id="Pooler-47"><a href="#Pooler-47"><span class="linenos">47</span></a><span class="sd">            pool_size (int, optional): Number of workers to uses. Defaults to 8.</span>
-</span><span id="Pooler-48"><a href="#Pooler-48"><span class="linenos">48</span></a><span class="sd">            chunk_lines (int, optional): Target row count for each chunked CSV. Last chunk may</span>
-</span><span id="Pooler-49"><a href="#Pooler-49"><span class="linenos">49</span></a><span class="sd">                have fewer rows.  Defaults to 10000.</span>
-</span><span id="Pooler-50"><a href="#Pooler-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Pooler-51"><a href="#Pooler-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span> <span class="o">=</span> <span class="n">csv_filename</span>
-</span><span id="Pooler-52"><a href="#Pooler-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span> <span class="o">=</span> <span class="n">process_fn</span>
-</span><span id="Pooler-53"><a href="#Pooler-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">=</span> <span class="n">callback_with</span>
-</span><span id="Pooler-54"><a href="#Pooler-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span> <span class="o">=</span> <span class="n">pool_size</span>
-</span><span id="Pooler-55"><a href="#Pooler-55"><span class="linenos">55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span> <span class="o">=</span> <span class="n">chunk_lines</span>
-</span><span id="Pooler-56"><a href="#Pooler-56"><span class="linenos">56</span></a>
-</span><span id="Pooler-57"><a href="#Pooler-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Pooler-58"><a href="#Pooler-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Pooler-59"><a href="#Pooler-59"><span class="linenos">59</span></a><span class="sd">        Processes `self.csv_filename` by using `CSVSplitter` to split it</span>
-</span><span id="Pooler-60"><a href="#Pooler-60"><span class="linenos">60</span></a><span class="sd">            into multiple temporary files defined by `self.chunk_lines`.</span>
-</span><span id="Pooler-61"><a href="#Pooler-61"><span class="linenos">61</span></a><span class="sd">        Use `multiprocessing.Pool` to use multiple process workers to process</span>
-</span><span id="Pooler-62"><a href="#Pooler-62"><span class="linenos">62</span></a><span class="sd">        the group of CSVs.</span>
-</span><span id="Pooler-63"><a href="#Pooler-63"><span class="linenos">63</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Pooler-64"><a href="#Pooler-64"><span class="linenos">64</span></a>        <span class="n">processed_count</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="Pooler-65"><a href="#Pooler-65"><span class="linenos">65</span></a>        <span class="n">csv_splitter</span> <span class="o">=</span> <span class="n">CSVSplitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span><span class="p">)</span>
-</span><span id="Pooler-66"><a href="#Pooler-66"><span class="linenos">66</span></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="Pooler-67"><a href="#Pooler-67"><span class="linenos">67</span></a>            <span class="n">csv_file_cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">())</span>
-</span><span id="Pooler-68"><a href="#Pooler-68"><span class="linenos">68</span></a>            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pooling against </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
-</span><span id="Pooler-69"><a href="#Pooler-69"><span class="linenos">69</span></a>            <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
-</span><span id="Pooler-70"><a href="#Pooler-70"><span class="linenos">70</span></a>                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">imap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_csv</span><span class="p">,</span> <span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">()):</span>
-</span><span id="Pooler-71"><a href="#Pooler-71"><span class="linenos">71</span></a>                    <span class="n">processed_count</span> <span class="o">+=</span> <span class="n">result</span>
-</span><span id="Pooler-72"><a href="#Pooler-72"><span class="linenos">72</span></a>        <span class="k">finally</span><span class="p">:</span>
-</span><span id="Pooler-73"><a href="#Pooler-73"><span class="linenos">73</span></a>            <span class="n">csv_splitter</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-</span><span id="Pooler-74"><a href="#Pooler-74"><span class="linenos">74</span></a>
-</span><span id="Pooler-75"><a href="#Pooler-75"><span class="linenos">75</span></a>        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">processed_count</span><span class="si">}</span><span class="s2"> rows from </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> CSV Files&quot;</span><span class="p">)</span>
-</span><span id="Pooler-76"><a href="#Pooler-76"><span class="linenos">76</span></a>
-</span><span id="Pooler-77"><a href="#Pooler-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">_process_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csv_chunk_filename</span><span class="p">):</span>
-</span><span id="Pooler-78"><a href="#Pooler-78"><span class="linenos">78</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">:</span>
-</span><span id="Pooler-79"><a href="#Pooler-79"><span class="linenos">79</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">)</span>
-</span><span id="Pooler-80"><a href="#Pooler-80"><span class="linenos">80</span></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="Pooler-81"><a href="#Pooler-81"><span class="linenos">81</span></a>                <span class="c1"># Get total lines and subtract for header:</span>
-</span><span id="Pooler-82"><a href="#Pooler-82"><span class="linenos">82</span></a>                <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span id="Pooler-83"><a href="#Pooler-83"><span class="linenos">83</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME</span><span class="p">:</span>
-</span><span id="Pooler-84"><a href="#Pooler-84"><span class="linenos">84</span></a>            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="Pooler-85"><a href="#Pooler-85"><span class="linenos">85</span></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="Pooler-86"><a href="#Pooler-86"><span class="linenos">86</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span><span id="Pooler-87"><a href="#Pooler-87"><span class="linenos">87</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME_ROW</span><span class="p">:</span>
-</span><span id="Pooler-88"><a href="#Pooler-88"><span class="linenos">88</span></a>            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="Pooler-89"><a href="#Pooler-89"><span class="linenos">89</span></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="Pooler-90"><a href="#Pooler-90"><span class="linenos">90</span></a>            <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="Pooler-91"><a href="#Pooler-91"><span class="linenos">91</span></a>
-</span><span id="Pooler-92"><a href="#Pooler-92"><span class="linenos">92</span></a>        <span class="k">return</span> <span class="n">result</span>
+    <a class="headerlink" href="#CSVPooler"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVPooler-25"><a href="#CSVPooler-25"><span class="linenos">25</span></a><span class="k">class</span> <span class="nc">CSVPooler</span><span class="p">:</span>
+</span><span id="CSVPooler-26"><a href="#CSVPooler-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="CSVPooler-27"><a href="#CSVPooler-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="p">,</span>
+</span><span id="CSVPooler-28"><a href="#CSVPooler-28"><span class="linenos">28</span></a>        <span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="CSVPooler-29"><a href="#CSVPooler-29"><span class="linenos">29</span></a>        <span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+</span><span id="CSVPooler-30"><a href="#CSVPooler-30"><span class="linenos">30</span></a>        <span class="n">callback_with</span><span class="p">:</span> <span class="n">CallbackWith</span> <span class="o">=</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">,</span>
+</span><span id="CSVPooler-31"><a href="#CSVPooler-31"><span class="linenos">31</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span id="CSVPooler-32"><a href="#CSVPooler-32"><span class="linenos">32</span></a>        <span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
+</span><span id="CSVPooler-33"><a href="#CSVPooler-33"><span class="linenos">33</span></a>    <span class="p">):</span>
+</span><span id="CSVPooler-34"><a href="#CSVPooler-34"><span class="linenos">34</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="CSVPooler-35"><a href="#CSVPooler-35"><span class="linenos">35</span></a><span class="sd">        Construct `Pooler` with given `csv_filename`, `process_fn`, `as_dataframe`, `pool_size&#39;, &#39;chunk_size&#39;</span>
+</span><span id="CSVPooler-36"><a href="#CSVPooler-36"><span class="linenos">36</span></a>
+</span><span id="CSVPooler-37"><a href="#CSVPooler-37"><span class="linenos">37</span></a><span class="sd">        Args:</span>
+</span><span id="CSVPooler-38"><a href="#CSVPooler-38"><span class="linenos">38</span></a><span class="sd">            csv_filename (str): Name of CSV file</span>
+</span><span id="CSVPooler-39"><a href="#CSVPooler-39"><span class="linenos">39</span></a><span class="sd">            process_fn (Callable): A function that accepts a single argument</span>
+</span><span id="CSVPooler-40"><a href="#CSVPooler-40"><span class="linenos">40</span></a><span class="sd">                By default, this is the path to a chunked CSV file</span>
+</span><span id="CSVPooler-41"><a href="#CSVPooler-41"><span class="linenos">41</span></a><span class="sd">                If `as_dataframe` is True, then the argument sent is a dataframe of the chunked CSV</span>
+</span><span id="CSVPooler-42"><a href="#CSVPooler-42"><span class="linenos">42</span></a><span class="sd">            callback_with (CallbackWith): Controls what is sent to callback function.</span>
+</span><span id="CSVPooler-43"><a href="#CSVPooler-43"><span class="linenos">43</span></a><span class="sd">                @see CallbackWith enumeration for details</span>
+</span><span id="CSVPooler-44"><a href="#CSVPooler-44"><span class="linenos">44</span></a><span class="sd">                Defaults to CallbackWith.CSV_FILENAME.</span>
+</span><span id="CSVPooler-45"><a href="#CSVPooler-45"><span class="linenos">45</span></a><span class="sd">            as_dataframe_rows (bool): When True, a dataframe is created as with as_dataframe.</span>
+</span><span id="CSVPooler-46"><a href="#CSVPooler-46"><span class="linenos">46</span></a><span class="sd">                that is sent to `process_fn` instead.  Defaults to False.</span>
+</span><span id="CSVPooler-47"><a href="#CSVPooler-47"><span class="linenos">47</span></a><span class="sd">            pool_size (int, optional): Number of workers to uses. Defaults to 8.</span>
+</span><span id="CSVPooler-48"><a href="#CSVPooler-48"><span class="linenos">48</span></a><span class="sd">            chunk_lines (int, optional): Target row count for each chunked CSV. Last chunk may</span>
+</span><span id="CSVPooler-49"><a href="#CSVPooler-49"><span class="linenos">49</span></a><span class="sd">                have fewer rows.  Defaults to 10000.</span>
+</span><span id="CSVPooler-50"><a href="#CSVPooler-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVPooler-51"><a href="#CSVPooler-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span> <span class="o">=</span> <span class="n">csv_filename</span>
+</span><span id="CSVPooler-52"><a href="#CSVPooler-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span> <span class="o">=</span> <span class="n">process_fn</span>
+</span><span id="CSVPooler-53"><a href="#CSVPooler-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">=</span> <span class="n">callback_with</span>
+</span><span id="CSVPooler-54"><a href="#CSVPooler-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span> <span class="o">=</span> <span class="n">pool_size</span>
+</span><span id="CSVPooler-55"><a href="#CSVPooler-55"><span class="linenos">55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span> <span class="o">=</span> <span class="n">chunk_lines</span>
+</span><span id="CSVPooler-56"><a href="#CSVPooler-56"><span class="linenos">56</span></a>
+</span><span id="CSVPooler-57"><a href="#CSVPooler-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="CSVPooler-58"><a href="#CSVPooler-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="CSVPooler-59"><a href="#CSVPooler-59"><span class="linenos">59</span></a><span class="sd">        Processes `self.csv_filename` by using `CSVSplitter` to split it</span>
+</span><span id="CSVPooler-60"><a href="#CSVPooler-60"><span class="linenos">60</span></a><span class="sd">            into multiple temporary files defined by `self.chunk_lines`.</span>
+</span><span id="CSVPooler-61"><a href="#CSVPooler-61"><span class="linenos">61</span></a><span class="sd">        Use `multiprocessing.Pool` to use multiple process workers to process</span>
+</span><span id="CSVPooler-62"><a href="#CSVPooler-62"><span class="linenos">62</span></a><span class="sd">        the group of CSVs.</span>
+</span><span id="CSVPooler-63"><a href="#CSVPooler-63"><span class="linenos">63</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVPooler-64"><a href="#CSVPooler-64"><span class="linenos">64</span></a>        <span class="n">processed_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="CSVPooler-65"><a href="#CSVPooler-65"><span class="linenos">65</span></a>        <span class="n">csv_splitter</span> <span class="o">=</span> <span class="n">CSVSplitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span><span class="p">)</span>
+</span><span id="CSVPooler-66"><a href="#CSVPooler-66"><span class="linenos">66</span></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="CSVPooler-67"><a href="#CSVPooler-67"><span class="linenos">67</span></a>            <span class="n">csv_file_cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">())</span>
+</span><span id="CSVPooler-68"><a href="#CSVPooler-68"><span class="linenos">68</span></a>            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pooling against </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
+</span><span id="CSVPooler-69"><a href="#CSVPooler-69"><span class="linenos">69</span></a>            <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="CSVPooler-70"><a href="#CSVPooler-70"><span class="linenos">70</span></a>                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">imap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_csv</span><span class="p">,</span> <span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">()):</span>
+</span><span id="CSVPooler-71"><a href="#CSVPooler-71"><span class="linenos">71</span></a>                    <span class="n">processed_count</span> <span class="o">+=</span> <span class="n">result</span>
+</span><span id="CSVPooler-72"><a href="#CSVPooler-72"><span class="linenos">72</span></a>        <span class="k">finally</span><span class="p">:</span>
+</span><span id="CSVPooler-73"><a href="#CSVPooler-73"><span class="linenos">73</span></a>            <span class="n">csv_splitter</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</span><span id="CSVPooler-74"><a href="#CSVPooler-74"><span class="linenos">74</span></a>
+</span><span id="CSVPooler-75"><a href="#CSVPooler-75"><span class="linenos">75</span></a>        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">processed_count</span><span class="si">}</span><span class="s2"> rows from </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> CSV Files&quot;</span><span class="p">)</span>
+</span><span id="CSVPooler-76"><a href="#CSVPooler-76"><span class="linenos">76</span></a>
+</span><span id="CSVPooler-77"><a href="#CSVPooler-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">_process_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csv_chunk_filename</span><span class="p">):</span>
+</span><span id="CSVPooler-78"><a href="#CSVPooler-78"><span class="linenos">78</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">:</span>
+</span><span id="CSVPooler-79"><a href="#CSVPooler-79"><span class="linenos">79</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">)</span>
+</span><span id="CSVPooler-80"><a href="#CSVPooler-80"><span class="linenos">80</span></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="CSVPooler-81"><a href="#CSVPooler-81"><span class="linenos">81</span></a>                <span class="c1"># Get total lines and subtract for header:</span>
+</span><span id="CSVPooler-82"><a href="#CSVPooler-82"><span class="linenos">82</span></a>                <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="CSVPooler-83"><a href="#CSVPooler-83"><span class="linenos">83</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME</span><span class="p">:</span>
+</span><span id="CSVPooler-84"><a href="#CSVPooler-84"><span class="linenos">84</span></a>            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="CSVPooler-85"><a href="#CSVPooler-85"><span class="linenos">85</span></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="CSVPooler-86"><a href="#CSVPooler-86"><span class="linenos">86</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span><span id="CSVPooler-87"><a href="#CSVPooler-87"><span class="linenos">87</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">==</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME_ROW</span><span class="p">:</span>
+</span><span id="CSVPooler-88"><a href="#CSVPooler-88"><span class="linenos">88</span></a>            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="CSVPooler-89"><a href="#CSVPooler-89"><span class="linenos">89</span></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="CSVPooler-90"><a href="#CSVPooler-90"><span class="linenos">90</span></a>            <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="CSVPooler-91"><a href="#CSVPooler-91"><span class="linenos">91</span></a>
+</span><span id="CSVPooler-92"><a href="#CSVPooler-92"><span class="linenos">92</span></a>        <span class="k">return</span> <span class="n">result</span>
 </span></pre></div>
 
 
     
 
-                            <div id="Pooler.__init__" class="classattr">
-                                        <input id="Pooler.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="CSVPooler.__init__" class="classattr">
+                                        <input id="CSVPooler.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">Pooler</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span>,</span><span class="param">	<span class="n">callback_with</span><span class="p">:</span> <span class="n"><a href="#CallbackWith">CallbackWith</a></span> <span class="o">=</span> <span class="o">&lt;</span><span class="n"><a href="#CallbackWith.CSV_FILENAME">CallbackWith.CSV_FILENAME</a></span><span class="p">:</span> <span class="s1">&#39;csv_filename&#39;</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span>,</span><span class="param">	<span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span></span>)</span>
+        <span class="name">CSVPooler</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span>,</span><span class="param">	<span class="n">callback_with</span><span class="p">:</span> <span class="n"><a href="#CallbackWith">CallbackWith</a></span> <span class="o">=</span> <span class="o">&lt;</span><span class="n"><a href="#CallbackWith.CSV_FILENAME">CallbackWith.CSV_FILENAME</a></span><span class="p">:</span> <span class="s1">&#39;csv_filename&#39;</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>,</span><span class="param">	<span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span></span>)</span>
 
-                <label class="view-source-button" for="Pooler.__init__-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="CSVPooler.__init__-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#Pooler.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Pooler.__init__-26"><a href="#Pooler.__init__-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-</span><span id="Pooler.__init__-27"><a href="#Pooler.__init__-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Pooler.__init__-28"><a href="#Pooler.__init__-28"><span class="linenos">28</span></a>        <span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="Pooler.__init__-29"><a href="#Pooler.__init__-29"><span class="linenos">29</span></a>        <span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
-</span><span id="Pooler.__init__-30"><a href="#Pooler.__init__-30"><span class="linenos">30</span></a>        <span class="n">callback_with</span><span class="p">:</span> <span class="n">CallbackWith</span> <span class="o">=</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">,</span>
-</span><span id="Pooler.__init__-31"><a href="#Pooler.__init__-31"><span class="linenos">31</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
-</span><span id="Pooler.__init__-32"><a href="#Pooler.__init__-32"><span class="linenos">32</span></a>        <span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
-</span><span id="Pooler.__init__-33"><a href="#Pooler.__init__-33"><span class="linenos">33</span></a>    <span class="p">):</span>
-</span><span id="Pooler.__init__-34"><a href="#Pooler.__init__-34"><span class="linenos">34</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Pooler.__init__-35"><a href="#Pooler.__init__-35"><span class="linenos">35</span></a><span class="sd">        Construct `Pooler` with given `csv_filename`, `process_fn`, `as_dataframe`, `pool_size&#39;, &#39;chunk_size&#39;</span>
-</span><span id="Pooler.__init__-36"><a href="#Pooler.__init__-36"><span class="linenos">36</span></a>
-</span><span id="Pooler.__init__-37"><a href="#Pooler.__init__-37"><span class="linenos">37</span></a><span class="sd">        Args:</span>
-</span><span id="Pooler.__init__-38"><a href="#Pooler.__init__-38"><span class="linenos">38</span></a><span class="sd">            csv_filename (str): Name of CSV file</span>
-</span><span id="Pooler.__init__-39"><a href="#Pooler.__init__-39"><span class="linenos">39</span></a><span class="sd">            process_fn (Callable): A function that accepts a single argument</span>
-</span><span id="Pooler.__init__-40"><a href="#Pooler.__init__-40"><span class="linenos">40</span></a><span class="sd">                By default, this is the path to a chunked CSV file</span>
-</span><span id="Pooler.__init__-41"><a href="#Pooler.__init__-41"><span class="linenos">41</span></a><span class="sd">                If `as_dataframe` is True, then the argument sent is a dataframe of the chunked CSV</span>
-</span><span id="Pooler.__init__-42"><a href="#Pooler.__init__-42"><span class="linenos">42</span></a><span class="sd">            callback_with (CallbackWith): Controls what is sent to callback function.</span>
-</span><span id="Pooler.__init__-43"><a href="#Pooler.__init__-43"><span class="linenos">43</span></a><span class="sd">                @see CallbackWith enumeration for details</span>
-</span><span id="Pooler.__init__-44"><a href="#Pooler.__init__-44"><span class="linenos">44</span></a><span class="sd">                Defaults to CallbackWith.CSV_FILENAME.</span>
-</span><span id="Pooler.__init__-45"><a href="#Pooler.__init__-45"><span class="linenos">45</span></a><span class="sd">            as_dataframe_rows (bool): When True, a dataframe is created as with as_dataframe.</span>
-</span><span id="Pooler.__init__-46"><a href="#Pooler.__init__-46"><span class="linenos">46</span></a><span class="sd">                that is sent to `process_fn` instead.  Defaults to False.</span>
-</span><span id="Pooler.__init__-47"><a href="#Pooler.__init__-47"><span class="linenos">47</span></a><span class="sd">            pool_size (int, optional): Number of workers to uses. Defaults to 8.</span>
-</span><span id="Pooler.__init__-48"><a href="#Pooler.__init__-48"><span class="linenos">48</span></a><span class="sd">            chunk_lines (int, optional): Target row count for each chunked CSV. Last chunk may</span>
-</span><span id="Pooler.__init__-49"><a href="#Pooler.__init__-49"><span class="linenos">49</span></a><span class="sd">                have fewer rows.  Defaults to 10000.</span>
-</span><span id="Pooler.__init__-50"><a href="#Pooler.__init__-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Pooler.__init__-51"><a href="#Pooler.__init__-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span> <span class="o">=</span> <span class="n">csv_filename</span>
-</span><span id="Pooler.__init__-52"><a href="#Pooler.__init__-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span> <span class="o">=</span> <span class="n">process_fn</span>
-</span><span id="Pooler.__init__-53"><a href="#Pooler.__init__-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">=</span> <span class="n">callback_with</span>
-</span><span id="Pooler.__init__-54"><a href="#Pooler.__init__-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span> <span class="o">=</span> <span class="n">pool_size</span>
-</span><span id="Pooler.__init__-55"><a href="#Pooler.__init__-55"><span class="linenos">55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span> <span class="o">=</span> <span class="n">chunk_lines</span>
+    <a class="headerlink" href="#CSVPooler.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVPooler.__init__-26"><a href="#CSVPooler.__init__-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="CSVPooler.__init__-27"><a href="#CSVPooler.__init__-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-28"><a href="#CSVPooler.__init__-28"><span class="linenos">28</span></a>        <span class="n">csv_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-29"><a href="#CSVPooler.__init__-29"><span class="linenos">29</span></a>        <span class="n">process_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-30"><a href="#CSVPooler.__init__-30"><span class="linenos">30</span></a>        <span class="n">callback_with</span><span class="p">:</span> <span class="n">CallbackWith</span> <span class="o">=</span> <span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-31"><a href="#CSVPooler.__init__-31"><span class="linenos">31</span></a>        <span class="n">pool_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-32"><a href="#CSVPooler.__init__-32"><span class="linenos">32</span></a>        <span class="n">chunk_lines</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
+</span><span id="CSVPooler.__init__-33"><a href="#CSVPooler.__init__-33"><span class="linenos">33</span></a>    <span class="p">):</span>
+</span><span id="CSVPooler.__init__-34"><a href="#CSVPooler.__init__-34"><span class="linenos">34</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="CSVPooler.__init__-35"><a href="#CSVPooler.__init__-35"><span class="linenos">35</span></a><span class="sd">        Construct `Pooler` with given `csv_filename`, `process_fn`, `as_dataframe`, `pool_size&#39;, &#39;chunk_size&#39;</span>
+</span><span id="CSVPooler.__init__-36"><a href="#CSVPooler.__init__-36"><span class="linenos">36</span></a>
+</span><span id="CSVPooler.__init__-37"><a href="#CSVPooler.__init__-37"><span class="linenos">37</span></a><span class="sd">        Args:</span>
+</span><span id="CSVPooler.__init__-38"><a href="#CSVPooler.__init__-38"><span class="linenos">38</span></a><span class="sd">            csv_filename (str): Name of CSV file</span>
+</span><span id="CSVPooler.__init__-39"><a href="#CSVPooler.__init__-39"><span class="linenos">39</span></a><span class="sd">            process_fn (Callable): A function that accepts a single argument</span>
+</span><span id="CSVPooler.__init__-40"><a href="#CSVPooler.__init__-40"><span class="linenos">40</span></a><span class="sd">                By default, this is the path to a chunked CSV file</span>
+</span><span id="CSVPooler.__init__-41"><a href="#CSVPooler.__init__-41"><span class="linenos">41</span></a><span class="sd">                If `as_dataframe` is True, then the argument sent is a dataframe of the chunked CSV</span>
+</span><span id="CSVPooler.__init__-42"><a href="#CSVPooler.__init__-42"><span class="linenos">42</span></a><span class="sd">            callback_with (CallbackWith): Controls what is sent to callback function.</span>
+</span><span id="CSVPooler.__init__-43"><a href="#CSVPooler.__init__-43"><span class="linenos">43</span></a><span class="sd">                @see CallbackWith enumeration for details</span>
+</span><span id="CSVPooler.__init__-44"><a href="#CSVPooler.__init__-44"><span class="linenos">44</span></a><span class="sd">                Defaults to CallbackWith.CSV_FILENAME.</span>
+</span><span id="CSVPooler.__init__-45"><a href="#CSVPooler.__init__-45"><span class="linenos">45</span></a><span class="sd">            as_dataframe_rows (bool): When True, a dataframe is created as with as_dataframe.</span>
+</span><span id="CSVPooler.__init__-46"><a href="#CSVPooler.__init__-46"><span class="linenos">46</span></a><span class="sd">                that is sent to `process_fn` instead.  Defaults to False.</span>
+</span><span id="CSVPooler.__init__-47"><a href="#CSVPooler.__init__-47"><span class="linenos">47</span></a><span class="sd">            pool_size (int, optional): Number of workers to uses. Defaults to 8.</span>
+</span><span id="CSVPooler.__init__-48"><a href="#CSVPooler.__init__-48"><span class="linenos">48</span></a><span class="sd">            chunk_lines (int, optional): Target row count for each chunked CSV. Last chunk may</span>
+</span><span id="CSVPooler.__init__-49"><a href="#CSVPooler.__init__-49"><span class="linenos">49</span></a><span class="sd">                have fewer rows.  Defaults to 10000.</span>
+</span><span id="CSVPooler.__init__-50"><a href="#CSVPooler.__init__-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVPooler.__init__-51"><a href="#CSVPooler.__init__-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span> <span class="o">=</span> <span class="n">csv_filename</span>
+</span><span id="CSVPooler.__init__-52"><a href="#CSVPooler.__init__-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">process_fn</span> <span class="o">=</span> <span class="n">process_fn</span>
+</span><span id="CSVPooler.__init__-53"><a href="#CSVPooler.__init__-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">callback_with</span> <span class="o">=</span> <span class="n">callback_with</span>
+</span><span id="CSVPooler.__init__-54"><a href="#CSVPooler.__init__-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span> <span class="o">=</span> <span class="n">pool_size</span>
+</span><span id="CSVPooler.__init__-55"><a href="#CSVPooler.__init__-55"><span class="linenos">55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span> <span class="o">=</span> <span class="n">chunk_lines</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Construct <code><a href="#Pooler">Pooler</a></code> with given <code><a href="#Pooler.csv_filename">csv_filename</a></code>, <code><a href="#Pooler.process_fn">process_fn</a></code>, <code>as_dataframe</code>, `pool_size', 'chunk_size'</p>
+            <div class="docstring"><p>Construct <code>Pooler</code> with given <code><a href="#CSVPooler.csv_filename">csv_filename</a></code>, <code><a href="#CSVPooler.process_fn">process_fn</a></code>, <code>as_dataframe</code>, `pool_size', 'chunk_size'</p>
 
 <p>Args:
     csv_filename (str): Name of CSV file
@@ -455,7 +455,7 @@
         @see CallbackWith enumeration for details
         Defaults to <a href="#CallbackWith.CSV_FILENAME">CallbackWith.CSV_FILENAME</a>.
     as_dataframe_rows (bool): When True, a dataframe is created as with as_dataframe.
-        that is sent to <code><a href="#Pooler.process_fn">process_fn</a></code> instead.  Defaults to False.
+        that is sent to <code><a href="#CSVPooler.process_fn">process_fn</a></code> instead.  Defaults to False.
     pool_size (int, optional): Number of workers to uses. Defaults to 8.
     chunk_lines (int, optional): Target row count for each chunked CSV. Last chunk may
         have fewer rows.  Defaults to 10000.</p>
@@ -463,91 +463,91 @@
 
 
                             </div>
-                            <div id="Pooler.csv_filename" class="classattr">
+                            <div id="CSVPooler.csv_filename" class="classattr">
                                 <div class="attr variable">
             <span class="name">csv_filename</span>
 
         
     </div>
-    <a class="headerlink" href="#Pooler.csv_filename"></a>
+    <a class="headerlink" href="#CSVPooler.csv_filename"></a>
     
     
 
                             </div>
-                            <div id="Pooler.process_fn" class="classattr">
+                            <div id="CSVPooler.process_fn" class="classattr">
                                 <div class="attr variable">
             <span class="name">process_fn</span>
 
         
     </div>
-    <a class="headerlink" href="#Pooler.process_fn"></a>
+    <a class="headerlink" href="#CSVPooler.process_fn"></a>
     
     
 
                             </div>
-                            <div id="Pooler.callback_with" class="classattr">
+                            <div id="CSVPooler.callback_with" class="classattr">
                                 <div class="attr variable">
             <span class="name">callback_with</span>
 
         
     </div>
-    <a class="headerlink" href="#Pooler.callback_with"></a>
+    <a class="headerlink" href="#CSVPooler.callback_with"></a>
     
     
 
                             </div>
-                            <div id="Pooler.pool_size" class="classattr">
+                            <div id="CSVPooler.pool_size" class="classattr">
                                 <div class="attr variable">
             <span class="name">pool_size</span>
 
         
     </div>
-    <a class="headerlink" href="#Pooler.pool_size"></a>
+    <a class="headerlink" href="#CSVPooler.pool_size"></a>
     
     
 
                             </div>
-                            <div id="Pooler.chunk_lines" class="classattr">
+                            <div id="CSVPooler.chunk_lines" class="classattr">
                                 <div class="attr variable">
             <span class="name">chunk_lines</span>
 
         
     </div>
-    <a class="headerlink" href="#Pooler.chunk_lines"></a>
+    <a class="headerlink" href="#CSVPooler.chunk_lines"></a>
     
     
 
                             </div>
-                            <div id="Pooler.process" class="classattr">
-                                        <input id="Pooler.process-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="CSVPooler.process" class="classattr">
+                                        <input id="CSVPooler.process-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">process</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="Pooler.process-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="CSVPooler.process-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#Pooler.process"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Pooler.process-57"><a href="#Pooler.process-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Pooler.process-58"><a href="#Pooler.process-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Pooler.process-59"><a href="#Pooler.process-59"><span class="linenos">59</span></a><span class="sd">        Processes `self.csv_filename` by using `CSVSplitter` to split it</span>
-</span><span id="Pooler.process-60"><a href="#Pooler.process-60"><span class="linenos">60</span></a><span class="sd">            into multiple temporary files defined by `self.chunk_lines`.</span>
-</span><span id="Pooler.process-61"><a href="#Pooler.process-61"><span class="linenos">61</span></a><span class="sd">        Use `multiprocessing.Pool` to use multiple process workers to process</span>
-</span><span id="Pooler.process-62"><a href="#Pooler.process-62"><span class="linenos">62</span></a><span class="sd">        the group of CSVs.</span>
-</span><span id="Pooler.process-63"><a href="#Pooler.process-63"><span class="linenos">63</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Pooler.process-64"><a href="#Pooler.process-64"><span class="linenos">64</span></a>        <span class="n">processed_count</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="Pooler.process-65"><a href="#Pooler.process-65"><span class="linenos">65</span></a>        <span class="n">csv_splitter</span> <span class="o">=</span> <span class="n">CSVSplitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span><span class="p">)</span>
-</span><span id="Pooler.process-66"><a href="#Pooler.process-66"><span class="linenos">66</span></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="Pooler.process-67"><a href="#Pooler.process-67"><span class="linenos">67</span></a>            <span class="n">csv_file_cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">())</span>
-</span><span id="Pooler.process-68"><a href="#Pooler.process-68"><span class="linenos">68</span></a>            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pooling against </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
-</span><span id="Pooler.process-69"><a href="#Pooler.process-69"><span class="linenos">69</span></a>            <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
-</span><span id="Pooler.process-70"><a href="#Pooler.process-70"><span class="linenos">70</span></a>                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">imap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_csv</span><span class="p">,</span> <span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">()):</span>
-</span><span id="Pooler.process-71"><a href="#Pooler.process-71"><span class="linenos">71</span></a>                    <span class="n">processed_count</span> <span class="o">+=</span> <span class="n">result</span>
-</span><span id="Pooler.process-72"><a href="#Pooler.process-72"><span class="linenos">72</span></a>        <span class="k">finally</span><span class="p">:</span>
-</span><span id="Pooler.process-73"><a href="#Pooler.process-73"><span class="linenos">73</span></a>            <span class="n">csv_splitter</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-</span><span id="Pooler.process-74"><a href="#Pooler.process-74"><span class="linenos">74</span></a>
-</span><span id="Pooler.process-75"><a href="#Pooler.process-75"><span class="linenos">75</span></a>        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">processed_count</span><span class="si">}</span><span class="s2"> rows from </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> CSV Files&quot;</span><span class="p">)</span>
+    <a class="headerlink" href="#CSVPooler.process"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVPooler.process-57"><a href="#CSVPooler.process-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="CSVPooler.process-58"><a href="#CSVPooler.process-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="CSVPooler.process-59"><a href="#CSVPooler.process-59"><span class="linenos">59</span></a><span class="sd">        Processes `self.csv_filename` by using `CSVSplitter` to split it</span>
+</span><span id="CSVPooler.process-60"><a href="#CSVPooler.process-60"><span class="linenos">60</span></a><span class="sd">            into multiple temporary files defined by `self.chunk_lines`.</span>
+</span><span id="CSVPooler.process-61"><a href="#CSVPooler.process-61"><span class="linenos">61</span></a><span class="sd">        Use `multiprocessing.Pool` to use multiple process workers to process</span>
+</span><span id="CSVPooler.process-62"><a href="#CSVPooler.process-62"><span class="linenos">62</span></a><span class="sd">        the group of CSVs.</span>
+</span><span id="CSVPooler.process-63"><a href="#CSVPooler.process-63"><span class="linenos">63</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVPooler.process-64"><a href="#CSVPooler.process-64"><span class="linenos">64</span></a>        <span class="n">processed_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="CSVPooler.process-65"><a href="#CSVPooler.process-65"><span class="linenos">65</span></a>        <span class="n">csv_splitter</span> <span class="o">=</span> <span class="n">CSVSplitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_lines</span><span class="p">)</span>
+</span><span id="CSVPooler.process-66"><a href="#CSVPooler.process-66"><span class="linenos">66</span></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="CSVPooler.process-67"><a href="#CSVPooler.process-67"><span class="linenos">67</span></a>            <span class="n">csv_file_cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">())</span>
+</span><span id="CSVPooler.process-68"><a href="#CSVPooler.process-68"><span class="linenos">68</span></a>            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pooling against </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
+</span><span id="CSVPooler.process-69"><a href="#CSVPooler.process-69"><span class="linenos">69</span></a>            <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool_size</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="CSVPooler.process-70"><a href="#CSVPooler.process-70"><span class="linenos">70</span></a>                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">imap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_csv</span><span class="p">,</span> <span class="n">csv_splitter</span><span class="o">.</span><span class="n">csv_files</span><span class="p">()):</span>
+</span><span id="CSVPooler.process-71"><a href="#CSVPooler.process-71"><span class="linenos">71</span></a>                    <span class="n">processed_count</span> <span class="o">+=</span> <span class="n">result</span>
+</span><span id="CSVPooler.process-72"><a href="#CSVPooler.process-72"><span class="linenos">72</span></a>        <span class="k">finally</span><span class="p">:</span>
+</span><span id="CSVPooler.process-73"><a href="#CSVPooler.process-73"><span class="linenos">73</span></a>            <span class="n">csv_splitter</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</span><span id="CSVPooler.process-74"><a href="#CSVPooler.process-74"><span class="linenos">74</span></a>
+</span><span id="CSVPooler.process-75"><a href="#CSVPooler.process-75"><span class="linenos">75</span></a>        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">processed_count</span><span class="si">}</span><span class="s2"> rows from </span><span class="si">{</span><span class="n">csv_file_cnt</span><span class="si">}</span><span class="s2"> CSV Files&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 

@@ -14,14 +14,14 @@ values:
 
 ### As dataframe row
 ```python
-  from csv_batcher.pooler import Pooler, CallbackWith
+  from csv_batcher.csv_pooler import CSVPooler, CallbackWith
 
   # Callback function passed to pooler; accepts a dataframe row
   #   as a pandas Series (via apply)
   def process_dataframe_row(row):
     return row.iloc[0]
 
-  pooler = Pooler(
+  pooler = CSVPooler(
     "5mSalesRecords.csv",
     process_dataframe_row,
     callback_with=CallbackWith.DATAFRAME_ROW,
@@ -31,7 +31,7 @@ values:
 
 ### As dataframe
 ```python
-  from csv_batcher.pooler import Pooler, CallbackWith
+  from csv_batcher.csv_pooler import CSVPooler, CallbackWith
 
   # Used in DataFrame.apply:
   def process_dataframe_row(row):
@@ -43,7 +43,7 @@ values:
     # Or do something more complicated....
     return len(df)
 
-  pooler = Pooler(
+  pooler = CSVPooler(
     "5mSalesRecords.csv",
     process_dataframe,
     callback_with=CallbackWith.DATAFRAME,
@@ -53,7 +53,7 @@ values:
 
 ### As CSV filename
 ```python
-  from csv_batcher.pooler import Pooler, CallbackWith
+  from csv_batcher.csv_pooler import CSVPooler, CallbackWith
 
   def process_csv_filename(csv_chunk_filename):
       # print("processing ", csv_chunk_filename)
@@ -68,7 +68,7 @@ values:
   def process_dataframe_row(row):
       return row.iloc[0]
 
-  pooler = Pooler(
+  pooler = CSVPooler(
     "5mSalesRecords.csv",
     process_dataframe,
     callback_with=CallbackWith.CSV_FILENAME
@@ -96,3 +96,6 @@ values:
 ```bash
   clear; pytest
 ```
+
+### Publishing
+`poetry publish --build -u __token__ -p $PYPI_TOKEN`

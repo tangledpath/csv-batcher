@@ -74,14 +74,14 @@ values:</p>
 <h3 id="as-dataframe-row">As dataframe row</h3>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code>  <span class="kn">from</span> <span class="nn">csv_batcher.pooler</span> <span class="kn">import</span> <span class="n">Pooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
+<pre><span></span><code>  <span class="kn">from</span> <span class="nn"><a href="csv_batcher/csv_pooler.html">csv_batcher.csv_pooler</a></span> <span class="kn">import</span> <span class="n">CSVPooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
 
   <span class="c1"># Callback function passed to pooler; accepts a dataframe row</span>
   <span class="c1">#   as a pandas Series (via apply)</span>
   <span class="k">def</span> <span class="nf">process_dataframe_row</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">row</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-  <span class="n">pooler</span> <span class="o">=</span> <span class="n">Pooler</span><span class="p">(</span>
+  <span class="n">pooler</span> <span class="o">=</span> <span class="n">CSVPooler</span><span class="p">(</span>
     <span class="s2">&quot;5mSalesRecords.csv&quot;</span><span class="p">,</span>
     <span class="n">process_dataframe_row</span><span class="p">,</span>
     <span class="n">callback_with</span><span class="o">=</span><span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME_ROW</span><span class="p">,</span>
@@ -91,7 +91,7 @@ values:</p>
 
 <span class="c1">### As dataframe</span>
 <span class="err">```</span><span class="n">python</span>
-  <span class="kn">from</span> <span class="nn">csv_batcher.pooler</span> <span class="kn">import</span> <span class="n">Pooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
+  <span class="kn">from</span> <span class="nn"><a href="csv_batcher/csv_pooler.html">csv_batcher.csv_pooler</a></span> <span class="kn">import</span> <span class="n">CSVPooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
 
   <span class="c1"># Used in DataFrame.apply:</span>
   <span class="k">def</span> <span class="nf">process_dataframe_row</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -103,7 +103,7 @@ values:</p>
     <span class="c1"># Or do something more complicated....</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-  <span class="n">pooler</span> <span class="o">=</span> <span class="n">Pooler</span><span class="p">(</span>
+  <span class="n">pooler</span> <span class="o">=</span> <span class="n">CSVPooler</span><span class="p">(</span>
     <span class="s2">&quot;5mSalesRecords.csv&quot;</span><span class="p">,</span>
     <span class="n">process_dataframe</span><span class="p">,</span>
     <span class="n">callback_with</span><span class="o">=</span><span class="n">CallbackWith</span><span class="o">.</span><span class="n">DATAFRAME</span><span class="p">,</span>
@@ -113,7 +113,7 @@ values:</p>
 
 <span class="c1">### As CSV filename</span>
 <span class="err">```</span><span class="n">python</span>
-  <span class="kn">from</span> <span class="nn">csv_batcher.pooler</span> <span class="kn">import</span> <span class="n">Pooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
+  <span class="kn">from</span> <span class="nn"><a href="csv_batcher/csv_pooler.html">csv_batcher.csv_pooler</a></span> <span class="kn">import</span> <span class="n">CSVPooler</span><span class="p">,</span> <span class="n">CallbackWith</span>
 
   <span class="k">def</span> <span class="nf">process_csv_filename</span><span class="p">(</span><span class="n">csv_chunk_filename</span><span class="p">):</span>
       <span class="c1"># print(&quot;processing &quot;, csv_chunk_filename)</span>
@@ -128,7 +128,7 @@ values:</p>
   <span class="k">def</span> <span class="nf">process_dataframe_row</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
       <span class="k">return</span> <span class="n">row</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-  <span class="n">pooler</span> <span class="o">=</span> <span class="n">Pooler</span><span class="p">(</span>
+  <span class="n">pooler</span> <span class="o">=</span> <span class="n">CSVPooler</span><span class="p">(</span>
     <span class="s2">&quot;5mSalesRecords.csv&quot;</span><span class="p">,</span>
     <span class="n">process_dataframe</span><span class="p">,</span>
     <span class="n">callback_with</span><span class="o">=</span><span class="n">CallbackWith</span><span class="o">.</span><span class="n">CSV_FILENAME</span>
@@ -163,6 +163,10 @@ values:</p>
 <pre><span></span><code><span class="w">  </span>clear<span class="p">;</span><span class="w"> </span>pytest
 </code></pre>
 </div>
+
+<h3 id="publishing">Publishing</h3>
+
+<p><code>poetry publish --build -u __token__ -p $PYPI_TOKEN</code></p>
 </div>
 
                         <input id="mod-csv_batcher-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">

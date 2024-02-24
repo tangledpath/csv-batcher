@@ -21,13 +21,13 @@ class CallbackWith(StrEnum):
     #   function. This causes the callback function to be called with
     #   each row as a `pd.Series` object:
     DATAFRAME_ROW = auto()
-class Pooler:
+class CSVPooler:
     def __init__(
         self,
         csv_filename: str,
         process_fn: Callable,
         callback_with: CallbackWith = CallbackWith.CSV_FILENAME,
-        pool_size: int = 12,
+        pool_size: int = 5,
         chunk_lines: int = 10000,
     ):
         """
