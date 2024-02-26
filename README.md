@@ -1,7 +1,6 @@
 # csv-batcher
 
 ## Installation
-TBD (python package)
 pip install csv-batcher
 
 ## Documentation
