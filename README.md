@@ -1,5 +1,5 @@
 # csv-batcher
-A python-based, multiprocess CSV batcher suitable for
+A lightweight, python-based, multiprocess CSV batcher suitable for
 use with dataframes or other tools that deal with large CSV files (or those that require timely processing).
 
 ## Installation
