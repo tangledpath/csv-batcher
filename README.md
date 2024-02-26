@@ -6,11 +6,14 @@ use with dataframes or other tools that deal with large CSV files (or those that
 pip install csv-batcher
 
 ## GitHub
-
+https://github.com/tangledpath/csv-batcher
 
 ## Documentation
 https://tangledpath.github.io/csv-batcher/csv_batcher.html
 
+## TODO
+* Better integrate results from callbacks
+* Implement pooling with celery (for use in django apps, etc.)
 ## Usage
 Arguments sent to callback function can be controlled by
 creating pooler with `callback_with` and the CallbackWith enum
