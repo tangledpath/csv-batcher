@@ -1,7 +1,12 @@
 # csv-batcher
+A python-based, multiprocess CSV batcher suitable for
+use with dataframes or other tools that deal with large CSV files (or those that require timely processing).
 
 ## Installation
 pip install csv-batcher
+
+## GitHub
+
 
 ## Documentation
 https://tangledpath.github.io/csv-batcher/csv_batcher.html
