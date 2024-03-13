@@ -1,4 +1,5 @@
 # csv-batcher
+## [Scaling vertically]([url](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up)) with CSVs.
 A lightweight, python-based, multiprocess CSV batcher suitable for
 use with dataframes or other tools that deal with large CSV files (or those that require timely processing).
 
@@ -13,7 +14,7 @@ https://tangledpath.github.io/csv-batcher/csv_batcher.html
 
 ## TODO
 * Better integrate results from callbacks
-* Implement pooling with celery (for use in django apps, etc.)
+* Maybe implement pooling with celery (for use in django apps, etc.), which can bring about [horizontal scaling]([url](https://en.wikipedia.org/wiki/Scalability#Horizontal_or_scale_out)).
 ## Usage
 Arguments sent to callback function can be controlled by
 creating pooler with `callback_with` and the CallbackWith enum
