@@ -1,4 +1,3 @@
-import unittest
 from csv_batcher.utils.time import time_and_log
 from csv_batcher.csv_pooler import CSVPooler, CallbackWith
 import pandas as pd
@@ -17,22 +16,29 @@ def __process_as_dataframe(df):
 def test_big_file_as_csv():
     with time_and_log("test_big_file_as_csv"):
         pooler = CSVPooler("5mSalesRecords.csv", __process_csv_filename)
-        pooler.process()
+        for processed_batch in pooler.process():
+            assert isinstance(processed_batch, pd.Series)
 
 def test_big_file_as_dataframe():
     with time_and_log("test_big_file_as_dataframe"):
         pooler = CSVPooler("5mSalesRecords.csv", __process_as_dataframe, callback_with=CallbackWith.DATAFRAME)
-        pooler.process()
+        for processed_batch in pooler.process():
+            assert isinstance(processed_batch, pd.Series)
 
 def test_big_file_as_dataframe_rows():
     with time_and_log("test_big_file_as_dataframe_rows"):
         pooler = CSVPooler("5mSalesRecords.csv", __process_dataframe_row, callback_with=CallbackWith.DATAFRAME_ROW)
-        pooler.process()
+        for processed_batch in pooler.process():
+            assert isinstance(processed_batch, pd.Series)
 
 def test_no_pooler():
     with time_and_log("test_no_pooler"):
         __process_csv_filename("5mSalesRecords.csv")
 
 
-if __name__ == "__main__":
-    unittest.main()
+if __name__ == '__main__':
+    test_big_file_as_csv()
+    test_big_file_as_dataframe()
+    test_big_file_as_dataframe_rows()
+    # test_migrator_idempotency()
+
