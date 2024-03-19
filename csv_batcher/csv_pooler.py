@@ -66,8 +66,9 @@ class CSVPooler:
             csv_file_cnt = len(csv_splitter.csv_files())
             logging.info(f"Pooling against {csv_file_cnt} files")
             with Pool(self.pool_size) as p:
-                for result in p.imap(self._process_csv, csv_splitter.csv_files()):
-                    processed_count += result
+                for result, count in p.imap(self._process_csv, csv_splitter.csv_files()):
+                    yield(result)
+                    processed_count += count
         finally:
             csv_splitter.cleanup()
 
@@ -75,17 +76,17 @@ class CSVPooler:
 
     def _process_csv(self, csv_chunk_filename):
         if self.callback_with == CallbackWith.CSV_FILENAME:
-            self.process_fn(csv_chunk_filename)
+            result = self.process_fn(csv_chunk_filename)
             with open(csv_chunk_filename) as f:
                 # Get total lines and subtract for header:
-                result = sum(1 for line in f) - 1
+                count = sum(1 for line in f) - 1
         elif self.callback_with == CallbackWith.DATAFRAME:
             df = pd.read_csv(csv_chunk_filename, skipinitialspace=True, index_col=None)
-            result = df.shape[0]
-            self.process_fn(df)
+            count = df.shape[0]
+            result = self.process_fn(df)
         elif self.callback_with == CallbackWith.DATAFRAME_ROW:
             df = pd.read_csv(csv_chunk_filename, skipinitialspace=True, index_col=None)
-            result = df.shape[0]
-            df.apply(self.process_fn, axis=1)
+            count = df.shape[0]
+            result = df.apply(self.process_fn, axis=1)
 
-        return result
+        return result, count
