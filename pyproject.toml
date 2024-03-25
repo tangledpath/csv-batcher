@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "csv-batcher"
-version = "0.1.5"
+version = "0.1.6"
 description = "A python utility to split a large CSV into smaller ones, and uses multiprocessing to process the CSVs in parallel."
 authors = ["Steven Miers <steven.miers@gmail.com>"]
 readme = "README.md"
