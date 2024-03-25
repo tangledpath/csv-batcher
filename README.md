@@ -1,5 +1,15 @@
 # csv-batcher
-## [Scaling vertically]([url](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up)) with CSVs.
+<p>
+  <img src="csv_batcher.png" align="left" width="256"/>
+</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+
+## [Vertical scaling]([url](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up))
 A lightweight, python-based, multiprocess CSV batcher suitable for
 use with dataframes or other tools that deal with large CSV files (or those that require timely processing).
 
@@ -101,6 +111,8 @@ ruff check . --fix # Auto-fix linting errors (where possible)
 poetry run pdoc csv_batcher
 # Generates to ./docs
 poetry run pdoc csv_batcher -o ./docs
+# OR
+bin/build.sh
 ```
 
 ### Testing
@@ -111,4 +123,6 @@ clear; pytest
 ### Publishing
 ```bash
 poetry publish --build -u __token__ -p $PYPI_TOKEN`
+# OR
+bin/publish.sh
 ```

@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "csv-batcher"
-version = "0.1.4"
+version = "0.1.5"
 description = "A python utility to split a large CSV into smaller ones, and uses multiprocessing to process the CSVs in parallel."
 authors = ["Steven Miers <steven.miers@gmail.com>"]
 readme = "README.md"
 license = "The Unlicense"
+homepage = "https://pypi.org/project/csv-batcher/"
+repository = "https://github.com/tangledpath/csv-batcher"
+documentation = "https://tangledpath.github.io/csv-batcher"
 
 [tool.poetry.dependencies]
 python = "^3.12.2"
