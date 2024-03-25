@@ -1,6 +1,6 @@
 # csv-batcher
 <p>
-  <img src="csv_batcher.png" align="left" width="256"/>
+  <img src="https://github.com/tangledpath/csv-batcher/blob/master/csv_batcher.png" align="left" width="256"/>
 </p>
 <p>&nbsp</p>
 <p>&nbsp</p>
