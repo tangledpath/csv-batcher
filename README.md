@@ -1,6 +1,6 @@
 # csv-batcher
 <p>
-  <img src="https://github.com/tangledpath/csv-batcher/blob/master/csv_batcher.png" align="left" width="256"/>
+  <img src="https://raw.githubusercontent.com/tangledpath/csv-batcher/master/csv_batcher.png" align="left" width="512" height="256"/>
 </p>
 <p>&nbsp</p>
 <p>&nbsp</p>
@@ -112,7 +112,7 @@ ruff check . --fix # Auto-fix linting errors (where possible)
 poetry run pdoc csv_batcher
 # Generates to ./docs
 poetry run pdoc csv_batcher -o ./docs
-# OR
+# OR (recommended)
 bin/build.sh
 ```
 
@@ -124,6 +124,6 @@ clear; pytest
 ### Publishing
 ```bash
 poetry publish --build -u __token__ -p $PYPI_TOKEN`
-# OR
+# OR (recommended)
 bin/publish.sh
 ```

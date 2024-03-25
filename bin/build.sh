@@ -1,5 +1,6 @@
 #!/bin/bash
 source ${BASH_SOURCE%/*}/clean.sh
-poetry run pdoc csv_batcher -o ./docs --logo https://github.com/tangledpath/csv-batcher/blob/master/csv_batcher.png --favicon https://github.com/tangledpath/csv-batcher/blob/master/csv_batcher_sm.png
-cp csv_batcher.png docs
+# Run in browser:
+poetry run pdoc csv_batcher --logo https://raw.githubusercontent.com/tangledpath/csv-batcher/master/csv_batcher.png --favicon https://raw.githubusercontent.com/tangledpath/csv-batcher/master/csv_batcher_sm.png
+poetry run pdoc csv_batcher -o ./docs --logo https://raw.githubusercontent.com/tangledpath/csv-batcher/master/csv_batcher.png --favicon https://raw.githubusercontent.com/tangledpath/csv-batcher/master/csv_batcher_sm.png
 poetry build
