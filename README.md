@@ -11,8 +11,7 @@
 <p>&nbsp</p>
 
 ## [Vertical scaling]([url](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up))
-A lightweight, python-based, multiprocess CSV batcher suitable for
-use with dataframes or other tools that deal with large CSV files (or those that require timely processing).
+A lightweight, python-based, multi-process CSV batcher suitable for use with Pandas dataframes, as a standalone tool, or other tools that deal with large CSV files (or files that require timely processing).
 
 ## Installation
 pip install csv-batcher
